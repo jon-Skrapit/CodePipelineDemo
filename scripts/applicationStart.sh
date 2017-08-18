@@ -1,2 +1,3 @@
 cd /home/ubuntu/app/ && npm install
-node /home/ubuntu/app/index.js
+npm install forever -g
+forever start /home/ubuntu/app/index.js
