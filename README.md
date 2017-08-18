@@ -1,5 +1,5 @@
 # CodePipelineDemo
-### note
+#### note
 在`code`最终部署的机器上安装`codedeploy-agent`可以在日志中看到部署过程的`info`、`error`
 
 日志文件在 `/var/log/aws/codedeploy-agen/codedeploy-agent.log`
@@ -13,3 +13,25 @@
 `sudo service codedeploy-agent start`
 
 #### 注意
+在ec2机器的iam role需要有s3、ec2、codedeploy权限
+
+Edit Trust Relationship
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "codedeploy.us-west-2.amazonaws.com",
+          "s3.amazonaws.com",
+          "codedeploy.amazonaws.com",
+          "ec2.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
