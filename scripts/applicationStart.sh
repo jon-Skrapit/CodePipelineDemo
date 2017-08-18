@@ -1,4 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/app
-npm install
-node index.js
+npm install /home/ubuntu/app
+node /home/ubuntu/app/index.js
