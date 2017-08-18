@@ -1,0 +1,1 @@
+node /home/ubuntu/app/index.js

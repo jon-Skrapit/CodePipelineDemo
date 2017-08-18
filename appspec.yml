@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: ./app
+    destination: /home/ubuntu/app
+hooks:
+  ApplicationStart:
+  - location: scripts/applicationStart.sh
+    timeout: 3600

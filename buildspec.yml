@@ -1,0 +1,18 @@
+##https://docs.aws.amazon.com/zh_cn/codebuild/latest/userguide/build-spec-ref.html
+version: 0.1
+
+phases:
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - app/*
+    - appspec.yml
+    - scripts/*
